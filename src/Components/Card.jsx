@@ -14,7 +14,7 @@ const Card = ({ data }) => {
 
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
-        <Link to={"/detail/" + data.id}>
+        <Link to={"/dentist/" + data.id}>
           <img src="../../public/images/doctor.jpg" alt="doctor-detail" width={200}/>
           <h3>{data.name}</h3>
           <h4>{data.username}</h4>
