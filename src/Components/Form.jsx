@@ -46,7 +46,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="divForm">
       <form onSubmit={onSubmitForm}>
       <label htmlFor="nombreCompleto">Nombre: </label>
       <input 

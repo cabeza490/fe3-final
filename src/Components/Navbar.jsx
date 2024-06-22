@@ -32,7 +32,9 @@ const Navbar = () => {
         <h4>Favs</h4>
       </Link>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button onClick={changeTheme} className={state.theme}>Change theme</button>
+      <button onClick={changeTheme} className={state.theme}>
+        {state.theme === "dark"? "☀️" : "🌙"}
+      </button>
     </nav>
   )
 }

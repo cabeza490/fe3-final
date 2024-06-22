@@ -25,6 +25,8 @@ export const reducer = (state, action) => {
         (item) => item.id !== action.payload.id
       );
       return {...state, favs: filterFavs}; 
+    case "RESET_FAVS":
+      return {...state, favs: action.payload};
     default:
       throw new Error("Error al modificar el estado");
   }

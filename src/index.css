@@ -13,21 +13,42 @@ code {
 }
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
+  padding: 3px;
   border: none;
   width: 100%;
   cursor: pointer;
+  font-size: xx-large;
+  /* color: gold; */
 }
 
-h1{
+h1, h2, h3, h4{
+  text-align: center;
+  margin: 0px 0px 0px 0px;
+}
+
+button{
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.removeFavsBtn{
+  font-size: xx-large;
+}
+
+.contact{
   text-align: center;
 }
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  /* width: 80vw; */
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
+}
+
+.detail{
+  text-align: center;
 }
 
 a{
@@ -47,9 +68,9 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  /* width: 90%; */
   height: 40px;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 footer > img{
@@ -61,13 +82,21 @@ footer > p{
   padding-top: 0.7rem;
 }
 
+.divForm, .divFavs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 form{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   height: 100px;
-  margin: 0 auto;
+  margin: 0px;
 }
 
 .card{
@@ -76,8 +105,13 @@ form{
   flex-direction: column;
   align-items: center;
   width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  padding: 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  border-radius: 5px;
+}
+
+a > img {
+  border-radius: 5px;
 }
 
 .card:hover{

@@ -31,8 +31,8 @@ const Card = ({ data }) => {
         </Link>
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">
-          {findFav ? "Remove fav" : "Add fav"}</button>
+        <button onClick={addFav} className={"favButton "+state.theme}>
+          {findFav ? "★" : "☆"}</button>
     </div>
   );
 };

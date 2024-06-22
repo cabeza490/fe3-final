@@ -6,12 +6,14 @@ import { useContextGlobal } from "../Components/utils/global.context";
 
 const Favs = () => {
 
-  const {state} =useContextGlobal();
+  const {state, dispatch} =useContextGlobal();
 
-  
+  const resetFavs = () => {
+    dispatch({type: "RESET_FAVS", payload: []});
+  };
 
   return (
-    <div className={state.theme}>
+    <div className={"divFavs "+state.theme}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {/* este componente debe consumir los destacados del localStorage */}
@@ -21,6 +23,11 @@ const Favs = () => {
           : null 
         }
       </div>
+      {state.favs.length 
+      ? <button onClick={resetFavs} className={"removeFavsBtn "+state.theme}>
+        Reset favs
+        </button>
+      : <h4>No favs 😢</h4>}
     </div>
   );
 };
