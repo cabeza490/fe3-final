@@ -1,15 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContextGlobal } from "./utils/global.context";
 
 
 const Card = ({ data }) => {
+  const {state, dispatch } = useContextGlobal();
+  const findFav = state.favs.find((item) => data.id === item.id);
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
-  }
+    if (findFav) {
+      dispatch({type: "REMOVE_FAV", payload: data});
+      console.log("removing fav");
+    } else {
+      dispatch({type: "ADD_FAV", payload: data});
+      console.log("adding fav");
+    }
+  };
 
   return (
-    <div className="card">
+    <div className={"card "+state.theme}>
         {/* En cada card deberan mostrar en name - username y el id */}
 
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
@@ -22,7 +32,7 @@ const Card = ({ data }) => {
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
         <button onClick={addFav} className="favButton">
-          Add fav</button>
+          {findFav ? "Remove fav" : "Add fav"}</button>
     </div>
   );
 };
